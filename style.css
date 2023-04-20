@@ -1,3 +1,8 @@
+html, body {
+    margin: 0px;
+    padding: 0px
+}
+
 .my-canvas {
     background-color: black;
 }
