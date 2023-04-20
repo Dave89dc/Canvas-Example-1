@@ -1,16 +1,51 @@
 const myCanvas = document.getElementById('my-canvas');
+const ctx = myCanvas.getContext('2d');
 
-// La canvas ha due nature, una 2d e una 3d
 
-const ctx = myCanvas.getContext('2d'); // ctx = context (contesto), 2d o webgl (3d = webgl)
+const point = {
+    x: 300,
+    y: 300
+};
 
-// ctx.fillRect(20,20,50,60);
+
+// for (let i = 0; i < 100; i++) {
+//     point.x += 1;
+//     ctx.fillStyle = 'red';
+//     ctx.fillRect(point.x, point.y, 2, 2);
+// };
+
+// setInterval(() => {
+
+//     const randomX = (Math.random()*4)-2;
+//     const randomY = (Math.random()*4)-2;
+
+//     ctx.fillStyle = 'red';
+//     ctx.fillRect(point.x, point.y, 2, 2);
+//     point.x += randomX;
+//     point.y += randomY;
+// }, 1);
 
 for (let i = 0; i < 100; i++) {
-    const originX = Math.random() * 600;
-    const originY = Math.random() * 600;
-    const width = Math.random() * 100;
-    const heigth = Math.random() * 100;
 
-    ctx.fillRect(originX, originY, width, heigth);
-};
+    const point = {
+        x: 300,
+        y: 300
+    };
+    
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+
+    point.color = `rgba(${red}, ${green}, ${blue})`;
+
+    setInterval(() => {
+        const randomX = (Math.random()*4)-2;
+        const randomY = (Math.random()*4)-2;
+    
+        ctx.fillStyle = point.color;
+        ctx.fillRect(point.x, point.y, 2, 2);
+        point.x += randomX;
+        point.y += randomY;
+    }, 1);
+
+}
