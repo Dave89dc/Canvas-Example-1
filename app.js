@@ -13,4 +13,10 @@ for (let i = 0; i < 100; i++) {
     const heigth = Math.random() * 100;
 
     ctx.fillRect(originX, originY, width, heigth);
+    ctx.fillStyle = 'rgba('+ 
+        Math.floor(Math.random()*256) + ',' + 
+        Math.floor(Math.random()*256) + ',' + 
+        Math.floor(Math.random()*256) + ',' +
+        Math.random() + ')';
+
 };
